@@ -1,0 +1,2 @@
+C:\Users\clu\source\repos\leetcode\validparentheses\Debug\validparentheses.exe
+C:\Users\clu\source\repos\leetcode\validparentheses\Debug\validparentheses.pdb
