@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mergetwosortedlists.cpp" />
     <ClCompile Include="twosum.cpp" />
     <ClCompile Include="validparentheses.cpp" />
   </ItemGroup>
