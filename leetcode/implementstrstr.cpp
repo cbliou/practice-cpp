@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/implement-strstr/
 #include "stdafx.h"
 
 namespace p28 {
@@ -12,7 +13,7 @@ namespace p28 {
                 return 0;
             }
 
-            // get some good indices
+            // get some good indices, kinda hacky.
             vector<int> idxs;
             for (unsigned int idx = 0; idx < haystack.size(); ++idx) {
                 if (idx + needle.size() - 1 <= haystack.size()) {

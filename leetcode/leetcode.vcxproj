@@ -142,9 +142,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="addtwonumbers.cpp" />
     <ClCompile Include="implementstrstr.cpp" />
+    <ClCompile Include="isvalidsudoku.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mergetwosortedlists.cpp" />
+    <ClCompile Include="searchinsertposition.cpp" />
     <ClCompile Include="twosum.cpp" />
     <ClCompile Include="validparentheses.cpp" />
   </ItemGroup>

@@ -1,7 +1,11 @@
+#pragma once
 #include "validparentheses.cpp"
 #include "twosum.cpp"
 #include "mergetwosortedlists.cpp"
 #include "implementstrstr.cpp"
+#include "searchinsertposition.cpp"
+#include "isvalidsudoku.cpp"
+#include "addtwonumbers.cpp"
 
 #include <assert.h>
 #include <stdio.h>
@@ -83,12 +87,50 @@ void testP28(void) {
     assert(s.strStr("abbabbbbabaaa", "aba") == 8);
 }
 
+void testP35(void) {
+    p35::Solution s;
+    vector<int> v {1, 2, 3, 4, 5, 6, 7, 9};
+    assert(s.searchInsert(v, 0) == 0);
+    assert(s.searchInsert(v, 1) == 0);
+    assert(s.searchInsert(v, -1) == 0);
+    assert(s.searchInsert(v, 5) == 4);
+    assert(s.searchInsert(v, 10) == 8);
+}
+
+void testP36(void) {
+
+    char row1[9] = {'.', '.', '.', '.', '5', '.', '.', '1', '.'};
+    char row2[9] = {'.', '4', '.', '3', '.', '.', '.', '.', '.'};
+    char row3[9] = {'.', '.', '.', '.', '.', '3', '.', '.', '1'};
+    char row4[9] = {'8', '.', '.', '.', '.', '.', '.', '2', '.'};
+    char row5[9] = {'.', '.', '2', '.', '7', '.', '.', '.', '.'};
+    char row6[9] = {'.', '1', '5', '.', '.', '.', '.', '.', '.'};
+    char row7[9] = {'.', '.', '.', '.', '.', '2', '.', '.', '.'};
+    char row8[9] = {'.', '2', '.', '9', '.', '.', '.', '.', '.'};
+    char row9[9] = {'.', '.', '4', '.', '.', '.', '.', '.', '.'};
+    char* arr[9];
+    arr[0] = row1;
+    arr[1] = row2;
+    arr[2] = row3;
+    arr[3] = row4;
+    arr[4] = row5;
+    arr[5] = row6;
+    arr[6] = row7;
+    arr[7] = row8;
+    arr[8] = row9;
+    int colSize[9] = { 9,9,9,9,9,9,9,9,9 };
+    p36::Solution s;
+    assert(s.isValidSudoku(arr, 9, colSize) == false);
+}
+
 int main()
 {
     testValidParentheses();
     testTwoSum();
     testProb21();
     testP28();
+    testP35();
+    testP36();
     printf("Good job; no errors.\n");
     getchar();
 
