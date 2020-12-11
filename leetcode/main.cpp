@@ -1,6 +1,7 @@
 #include "validparentheses.cpp"
 #include "twosum.cpp"
 #include "mergetwosortedlists.cpp"
+#include "implementstrstr.cpp"
 
 #include <assert.h>
 #include <stdio.h>
@@ -77,11 +78,17 @@ void testProb21(void) {
 
 }
 
+void testP28(void) {
+    p28::Solution s;
+    assert(s.strStr("abbabbbbabaaa", "aba") == 8);
+}
+
 int main()
 {
     testValidParentheses();
     testTwoSum();
     testProb21();
+    testP28();
     printf("Good job; no errors.\n");
     getchar();
 

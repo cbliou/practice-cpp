@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="implementstrstr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mergetwosortedlists.cpp" />
     <ClCompile Include="twosum.cpp" />
