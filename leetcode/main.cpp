@@ -6,9 +6,11 @@
 #include "searchinsertposition.cpp"
 #include "isvalidsudoku.cpp"
 #include "addtwonumbers.cpp"
+#include "longestsubstrwithoutrepeatingcharacters.cpp"
 
 #include <assert.h>
 #include <stdio.h>
+
 
 void testValidParentheses(void) {
     validparentheses::Solution s;
@@ -36,14 +38,14 @@ void testTwoSum(void) {
     
 }
 
-void prob21Equality(ListNode* l1, ListNode* l2) {
+void linkedlistequality(ListNode* l1, ListNode* l2) {
     while (l1->next != nullptr) {
         assert(l1->val == l2->val);
         l1 = l1->next;
     }
 }
 
-ListNode* prob21Create(int arr[]) {
+ListNode* arrtolinkedlist(int arr[]) {
     ListNode* dummy = new ListNode();
     ListNode* ptr = dummy;
     for (unsigned int i = 0; i < sizeof(arr) / sizeof(int); ++i) {
@@ -55,7 +57,7 @@ ListNode* prob21Create(int arr[]) {
     return tmp;
 }
 
-void prob21Free(ListNode* arr) {
+void freelinkedlist(ListNode* arr) {
     while (arr->next != nullptr) {
         ListNode* tmp = arr;
         arr = arr->next;
@@ -69,16 +71,16 @@ void testProb21(void) {
     int arr[3] = { -21, -5, -2 };
     int arr2[3] = { -20, -4, 0 };
     int arr3[6] = { -21, -20, -5, -4, -2, 0 };
-    ListNode* one = prob21Create(arr);
-    ListNode* two = prob21Create(arr2);
-    ListNode* three = prob21Create(arr3);
+    ListNode* one = arrtolinkedlist(arr);
+    ListNode* two = arrtolinkedlist(arr2);
+    ListNode* three = arrtolinkedlist(arr3);
 
     ListNode* ans = s.mergeTwoLists(one, two);
-    prob21Equality(ans, three);
-    prob21Free(one);
-    prob21Free(two);
-    prob21Free(ans);
-    prob21Free(three);
+    linkedlistequality(ans, three);
+    freelinkedlist(one);
+    freelinkedlist(two);
+    freelinkedlist(ans);
+    freelinkedlist(three);
 
 }
 
@@ -123,6 +125,39 @@ void testP36(void) {
     assert(s.isValidSudoku(arr, 9, colSize) == false);
 }
 
+void testp2(void) {
+    p2::Solution s;
+    int arr[3] = { 1, 3, 4 };
+    int arr2[3] = { 9, 9, 9};
+    int arr3[4] = { 0, 3, 2, 1 };
+    ListNode* one = arrtolinkedlist(arr);
+    ListNode* two = arrtolinkedlist(arr2);
+    ListNode* three = arrtolinkedlist(arr3);
+    ListNode* ans = s.addTwoNumbers(one, two);
+    linkedlistequality(three, ans);
+    freelinkedlist(one);
+    freelinkedlist(two);
+    freelinkedlist(three);
+    freelinkedlist(ans);
+}
+
+void testp3(void) {
+    p3::Solution s;
+    assert(s.lengthOfLongestSubstring("adslfj;sdnfewanadl") == 9);
+}
+
+void test(void) {
+    std::unordered_set<int> x({ 1, 4, 6 });
+    assert(x.find(2) == x.end());
+    assert(*x.find(4) == 4);
+    x.erase(x.begin(), x.end());
+    assert(x.size() == 0);
+    x.erase(x.begin(), x.end());
+    x.emplace(1);
+    x.emplace(1);
+    printf("Size is %d", x.size());
+}
+
 int main()
 {
     testValidParentheses();
@@ -131,7 +166,9 @@ int main()
     testP28();
     testP35();
     testP36();
+    testp2();
+    testp3();
+    //test();
     printf("Good job; no errors.\n");
     getchar();
-
 }

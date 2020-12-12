@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <string.h>
+#include <unordered_set>
 
 using namespace std;
 
@@ -12,3 +14,4 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+
