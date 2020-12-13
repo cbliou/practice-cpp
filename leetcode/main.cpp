@@ -155,7 +155,33 @@ void test(void) {
     x.erase(x.begin(), x.end());
     x.emplace(1);
     x.emplace(1);
-    printf("Size is %d", x.size());
+    printf("Size is %d\n", x.size());
+
+    std::set<int> a = { 0, 2, 6, 1, 4 };
+    for (const int i : a) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    a.insert(4);
+    a.insert(5);
+    for (const int i : a) {
+        printf("%d ", i);
+    }
+
+    printf("%d\n", *a.begin());
+
+    while (*a.begin() < 5) {
+        a.erase(a.begin());
+    }
+
+    for (const int i : a) {
+        printf("%d ", i);
+    }
+
+    for (int i = 0; i < (1 << 10); ++i) {
+        printf("%d ", i);
+    }
+
 }
 
 int main()
@@ -168,7 +194,7 @@ int main()
     testP36();
     testp2();
     testp3();
-    //test();
+    test();
     printf("Good job; no errors.\n");
     getchar();
 }
