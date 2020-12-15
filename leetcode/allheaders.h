@@ -1,0 +1,11 @@
+#pragma once
+#include "validparentheses.cpp"
+#include "twosum.cpp"
+#include "mergetwosortedlists.cpp"
+#include "implementstrstr.cpp"
+#include "searchinsertposition.cpp"
+#include "isvalidsudoku.cpp"
+#include "addtwonumbers.cpp"
+#include "longestsubstrwithoutrepeatingcharacters.cpp"
+#include "zigzagconversion.cpp"
+#include "containerwithmostwater.cpp"

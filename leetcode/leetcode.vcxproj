@@ -143,17 +143,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="containerwithmostwater.cpp" />
     <ClCompile Include="firstmissingpositive.cpp" />
     <ClCompile Include="implementstrstr.cpp" />
     <ClCompile Include="isvalidsudoku.cpp" />
     <ClCompile Include="longestsubstrwithoutrepeatingcharacters.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="medianoftwosortedarrays.cpp" />
     <ClCompile Include="mergetwosortedlists.cpp" />
+    <ClCompile Include="nondecreasingarray.cpp" />
     <ClCompile Include="searchinsertposition.cpp" />
     <ClCompile Include="twosum.cpp" />
     <ClCompile Include="validparentheses.cpp" />
+    <ClCompile Include="zigzagconversion.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="allheaders.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

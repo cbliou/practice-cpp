@@ -22,23 +22,20 @@ namespace p6 {
 
                     // only reading the top level
                     if (i == 0) {
-                        candidate += s[col];
+                        candidate.push_back(s[col]);
                     }
                     // now you can read the inner, but guard against too long strings
                     else {
 
-                        if ((col + i) % (numRows - 1) == 0 && col + i < s.size()) {
-                            cout << candidate << "\n";
-                            cout << col << " " << i << "\n";
-                            
-                            candidate += s[col + i];
+                        if ((col + i) % (numRows - 1) == 0 && col + i < s.size()) {                          
+                            candidate.push_back(s[col + i]);
                             continue;
                         }
                         if (col + i < s.size()) {
-                            candidate += s[col + i];
+                            candidate.push_back(s[col + i]);
                         }
                         if (col + window - i < s.size()) {
-                            candidate += s[col + window - i];
+                            candidate.push_back(s[col + window - i]);
                         }
                     }
                 }
