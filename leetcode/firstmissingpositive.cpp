@@ -1,5 +1,7 @@
+//https://leetcode.com/problems/first-missing-positive/
 #include "stdafx.h"
 
+//find the constant space solution
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {

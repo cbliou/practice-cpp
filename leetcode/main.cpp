@@ -7,6 +7,7 @@
 #include "isvalidsudoku.cpp"
 #include "addtwonumbers.cpp"
 #include "longestsubstrwithoutrepeatingcharacters.cpp"
+#include "zigzagconversion.cpp"
 
 #include <assert.h>
 #include <stdio.h>
@@ -184,6 +185,13 @@ void test(void) {
 
 }
 
+void testp6(void) {
+    p6::Solution s;
+    string test1 = "PAYPALISHIRING";
+    assert(s.convert(test1, 4) == "PINALSIGYAHRPI");
+    assert(s.convert(test1, 3) == "PAHNAPLSIIGYIR");
+}
+
 int main()
 {
     testValidParentheses();
@@ -194,7 +202,8 @@ int main()
     testP36();
     testp2();
     testp3();
-    test();
+    testp6();
+    //test();
     printf("Good job; no errors.\n");
     getchar();
 }
