@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#pragma once
+#include "util.h"
 
 bool testPrime(int i) {
 	if (i == 2) {
@@ -49,26 +50,28 @@ void reshapeGrid(vector<int>& init, vector<vector<int>>& v, int dim) {
 	}
 }
 
-void testUtil() {
-	assert(determinePalindrome(121) == true);
-	assert(determinePalindrome(11) == true);
-	assert(determinePalindrome(1) == true);
-	assert(determinePalindrome(12321) == true);
-	assert(determinePalindrome(12831) == false);
-	assert(determinePalindrome(1122) == false);
-	assert(determinePalindrome(2345432) == true);
-	assert(determinePalindrome(995599) == true);
-	assert(determinePalindrome(88988) == true);
-	assert(determinePalindrome(99398) == false);
+uint64_t triangleNumber(int nth) {
+	if (nth <= 0) {
+		return 0;
+	}
+	else if (nth == 1) {
+		return 1;
+	}
+	return nth + triangleNumber(nth - 1);
+}
 
-	assert(testPrime(24) == false);
-	assert(testPrime(14) == false);
-	assert(testPrime(145) == false);
-	assert(testPrime(149) == true);
-	assert(testPrime(13) == true);
-	assert(testPrime(3) == true);
-	assert(testPrime(5) == true);
-	assert(testPrime(7) == true);
-	assert(testPrime(11) == true);
-	assert(testPrime(17) == true);
+// i think you'd be able to check up to sqrt(i), then return 2 * found number. 
+// if it's a perfect square, then you'd need to return + 1 more because checking up until sqrt(i) only gets stuff below, you're missing the sqrt one
+int getNumDivisors(uint64_t i) {
+	if (i == 1) {
+		return 1;
+	}
+
+	int n = 0;
+	for (int test = 1; test < sqrt(i); ++test) {
+		if (i % test == 0) {
+			++n;
+		}
+	}
+	return (double)sqrt(i) == (int)sqrt(i) ? n * 2 + 1 : n * 2;
 }

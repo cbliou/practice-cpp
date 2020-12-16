@@ -5,6 +5,9 @@
 using namespace std;
 
 // making some unsigned bigint functionality b/c problem 13 is impossible
+/*
+notes: you can return a 
+*/
 class ubigint {
 
 private:
@@ -25,6 +28,13 @@ public:
 	ubigint operator+(const ubigint& right) {
 		ubigint tmp;
 		tmp.number = add(this->number, right.number);
+		return tmp;
+	}
+
+	// guess we gotta do * due to problem 16
+	ubigint operator*(const ubigint& right) {
+		ubigint tmp;
+		tmp.number = multiply(this->number, right.number);
 		return tmp;
 	}
 
@@ -49,8 +59,6 @@ public:
 
 		for (int i = 0; i < left.number.size(); ++i) {
 			if (left.number[i] != right[i]) {
-				cout << left.number << "\n";
-				cout << right << "\n";
 				return false;
 			}
 		}
@@ -79,7 +87,6 @@ private:
 		}
 
 		while (leftlen >= 0 && rightlen >= 0) {
-			cout << sum << '\n';
 			int s = left[leftlen] - 48 + right[rightlen] - 48 + carry;
 			carry = s / 10;
 			sum.insert(0, to_string(s % 10));
@@ -89,14 +96,12 @@ private:
 
 		// carry is still in scope here
 		while (leftlen >= 0) {
-			cout << sum << '\n';
 			int s = left[leftlen] - 48 + carry;
 			carry = s / 10;
 			sum.insert(0, to_string(s % 10));
 			--leftlen;
 		}
 		while (rightlen >= 0) {
-			
 			int s = right[rightlen] - 48 + carry;
 			carry = s / 10;
 			sum.insert(0, to_string(s % 10));
@@ -113,11 +118,14 @@ private:
 	}
 
 	string removeLeadingZeroes(string i) {
-		cout << i << '\n';
 		while (i[0] == '0') {
 			i.erase(i.begin());
 		}
 		return i;
+	}
+
+	string multiply(string left, string right) {
+
 	}
 
 

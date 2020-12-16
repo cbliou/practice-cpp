@@ -92,6 +92,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>10000000</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -108,6 +109,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>10000000</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -143,6 +145,10 @@
     <ClCompile Include="problem1.cpp" />
     <ClCompile Include="problem10.cpp" />
     <ClCompile Include="problem11.cpp" />
+    <ClCompile Include="problem12.cpp" />
+    <ClCompile Include="problem13.cpp" />
+    <ClCompile Include="problem14.cpp" />
+    <ClCompile Include="problem15.cpp" />
     <ClCompile Include="problem2.cpp" />
     <ClCompile Include="problem3.cpp" />
     <ClCompile Include="problem4.cpp" />
@@ -151,10 +157,13 @@
     <ClCompile Include="problem7.cpp" />
     <ClCompile Include="problem8.cpp" />
     <ClCompile Include="problem9.cpp" />
+    <ClCompile Include="testingsuite.cpp" />
     <ClCompile Include="util.cpp" />
     <ClCompile Include="util.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="testingsuite.h" />
+    <ClInclude Include="ubigint.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

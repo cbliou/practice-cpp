@@ -1,5 +1,7 @@
 #pragma once
 #include "testingsuite.h"
+#include "util.h"
+#include "ubigint.h"
 
 void testubigint() {
 	ubigint i1(string("123"));
