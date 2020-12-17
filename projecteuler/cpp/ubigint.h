@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -43,7 +43,7 @@ public:
 			return false;
 		}
 
-		for (int i = 0; i < left.number.size(); ++i) {
+		for (unsigned int i = 0; i < left.number.size(); ++i) {
 			if (left.number[i] != right.number[i]) {
 				return false;
 			}
@@ -57,7 +57,7 @@ public:
 			return false;
 		}
 
-		for (int i = 0; i < left.number.size(); ++i) {
+		for (unsigned int i = 0; i < left.number.size(); ++i) {
 			if (left.number[i] != right[i]) {
 				return false;
 			}
@@ -70,12 +70,20 @@ public:
 		stream << i.number;
 	}
 
+	unsigned int sumDigits(void) {
+		unsigned int sum = 0;
+		for (unsigned int i = 0; i < this->number.size(); ++i) {
+			sum += this->number[i] - 48;
+		}
+		return sum;
+	}
+
 private:
 	/*
 	internal func to add
 	add two numbers like we learned in grade school: r to l
 	*/
-	string add(string left, string right) {
+	string add(const string left, const string right) {
 		int leftlen = left.size() - 1;
 		int rightlen = right.size() - 1;
 		int carry = 0;
@@ -118,14 +126,35 @@ private:
 	}
 
 	string removeLeadingZeroes(string i) {
-		while (i[0] == '0') {
+		while (i[0] == '0' && i.size() > 1) {
 			i.erase(i.begin());
 		}
 		return i;
 	}
 
+	// grade school type multiplication..
 	string multiply(string left, string right) {
+		string result = "0";
 
+		for (int i = left.size() - 1; i >= 0; --i) {
+			// string (size_t n, char c);
+			string tmp((unsigned int) abs(i - (int)left.size() + 1), 48);
+			int carry = 0;
+			for (int j = right.size() - 1; j >= 0; --j) {
+				int s = (left[i] - 48) * (right[j] - 48) + carry;
+				carry = s / 10;
+				// if at end, just insert the entire result
+				if (j == 0) {
+					tmp.insert(0, to_string(s));
+				}
+				else {
+					tmp.insert(0, to_string(s % 10));
+				}
+
+			}
+			result = add(result, tmp);
+		}
+		return removeLeadingZeroes(result);
 	}
 
 

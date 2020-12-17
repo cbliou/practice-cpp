@@ -1,13 +1,14 @@
+#pragma once
 #include "main.h"
-//#include "testingsuite.h"
+#include "testingsuite.h"
 
 // FOR /L %i IN (13, 1, 100) DO copy problem12.cpp problem%i.cpp
 
 int main() {
-	/*
-	testUtil();
-	testubigint();
 	
+	//testUtil();
+	//testubigint();
+	/*
 	printf("Problem 1: %d\n", problem1());
 	printf("Problem 2: %d\n", problem2());
 	printf("Problem 3: %d\n", problem3());
@@ -22,10 +23,11 @@ int main() {
 	printf("Problem 12: %d\n", problem12());
 	cout << "Problem 13: " << problem13();
 	cout << "\n";
-	*/
 	printf("Problem 14: %d\n", problem14());
 	printf("Problem 15: %lld\n", problem15());
-
+	*/
+	printf("Problem 16: %d\n", problem16());
+	printf("Problem 17: %d\n", problem17());
 	getchar();
 	return 0;
 }

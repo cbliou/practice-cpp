@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "util.h"
 
 int problem4(void) {
 

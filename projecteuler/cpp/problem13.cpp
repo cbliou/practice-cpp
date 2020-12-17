@@ -1,7 +1,4 @@
 #include "stdafx.h"
-#include "ubigint.h"
-
-
 
 ubigint problem13(void) {
 

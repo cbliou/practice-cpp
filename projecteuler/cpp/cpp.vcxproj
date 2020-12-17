@@ -88,6 +88,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <MinimalRebuild>true</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,6 +106,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <MinimalRebuild>true</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,6 +155,8 @@
     <ClCompile Include="problem13.cpp" />
     <ClCompile Include="problem14.cpp" />
     <ClCompile Include="problem15.cpp" />
+    <ClCompile Include="problem16.cpp" />
+    <ClCompile Include="problem17.cpp" />
     <ClCompile Include="problem2.cpp" />
     <ClCompile Include="problem3.cpp" />
     <ClCompile Include="problem4.cpp" />
@@ -159,7 +167,7 @@
     <ClCompile Include="problem9.cpp" />
     <ClCompile Include="testingsuite.cpp" />
     <ClCompile Include="util.cpp" />
-    <ClCompile Include="util.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="testingsuite.h" />

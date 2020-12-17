@@ -4,11 +4,9 @@
 #include <vector>
 #include <string>
 #include <regex>
-#include <assert.h>
+#include <unordered_map>
 
+#include "ubigint.h"
+#include "util.h"
 
 using namespace std;
-
-
-
-

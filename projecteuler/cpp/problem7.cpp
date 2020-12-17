@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "util.h"
 
 // test odds only
 int problem7(int numPrime) {

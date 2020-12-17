@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "util.h"
 
 uint64_t problem10(void) {
 	uint64_t sum = 2;

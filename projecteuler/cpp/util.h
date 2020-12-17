@@ -1,5 +1,7 @@
 #pragma once
-#include "stdafx.h"
+#include <vector>
+
+using namespace std;
 
 bool testPrime(int i);
 void generateFib(vector<int>& n, int limit);

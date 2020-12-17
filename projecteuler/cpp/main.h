@@ -1,8 +1,5 @@
 #pragma once
 #include "stdafx.h"
-#include "util.h"
-#include "ubigint.h"
-#include <assert.h>
 
 //forward decls
 int problem1();

@@ -1,7 +1,6 @@
 #pragma once
 #include "testingsuite.h"
-#include "util.h"
-#include "ubigint.h"
+
 
 void testubigint() {
 	ubigint i1(string("123"));
@@ -17,6 +16,24 @@ void testubigint() {
 	assert(ubigint("9") + ubigint("9") == ubigint("18"));
 	assert(ubigint("11111") + ubigint("12321") == ubigint("23432"));
 	assert(ubigint("37107287533902102798797998220837590246510135740250") + ubigint("46376937677490009712648124896970078050417018260538") == ubigint("83484225211392112511446123117807668296927154000788"));
+	assert(ubigint("12123") + ubigint("0") == ubigint("12123"));
+	assert(ubigint("1") * ubigint("1") == ubigint("1"));
+	assert(ubigint("2") * ubigint("1") == ubigint("2"));
+	assert(ubigint("1") * ubigint("2") == ubigint("2"));
+	assert(ubigint("0") * ubigint("1") == ubigint("0"));
+	assert(ubigint("0") * ubigint("12") == ubigint("0"));
+	assert(ubigint("0") * ubigint("1473829347382934738291343782934756382947382934758329347583920485732910") == ubigint("0"));
+	assert(ubigint("0") * ubigint("23") == ubigint("0"));
+	assert(ubigint("1") * ubigint("11232132112070402010507020101") == ubigint("11232132112070402010507020101"));
+	assert(ubigint("3058149") * ubigint("95017") == ubigint("290576143533"));
+	assert(ubigint("1") * ubigint("1") * ubigint("1") * ubigint("1") == ubigint("1"));
+	assert(ubigint("2") * ubigint("2") == ubigint("4"));
+	assert(ubigint("3") * ubigint("4") == ubigint("12"));
+	assert(ubigint("9") * ubigint("5") == ubigint("45"));
+	assert(ubigint("99999999999999999999999999999999999999999999999999999999999999999999999999999999999") * ubigint("1") * ubigint("1") * ubigint("1") == ubigint("99999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
+	assert(ubigint("783265096274793940943") * ubigint("3725096592838348945892377642") == ubigint("2917738141422436272725283756412559956189601596406"));
+
+	cout << "Passed all bigint tests.\n";
 }
 
 void testUtil() {
@@ -68,4 +85,6 @@ void testUtil() {
 	assert(getNumDivisors(21) == 4);
 	assert(getNumDivisors(28) == 6);
 	assert(getNumDivisors(60) == 12);
+
+	cout << "Passed all util tests.\n";
 }

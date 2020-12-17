@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "util.h"
 
 int problem11(void) {
 	// convert to grid of ints
