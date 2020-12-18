@@ -33,7 +33,6 @@ int problem11(void) {
 		nums.push_back(stoi(m.str()));
 	}
 
-	
 	vector<vector<int>> grid(size, vector<int>(size));
 	reshapeGrid(nums, grid, size);
 	// find max

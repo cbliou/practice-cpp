@@ -24,3 +24,4 @@ int problem19();
 int problem20();
 int problem21();
 int problem22();
+int problem67();

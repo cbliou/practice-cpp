@@ -6,8 +6,8 @@
 
 int main() {
 	
-	//testUtil();
-	//testubigint();
+	testUtil();
+	testubigint();
 	/*
 	printf("Problem 1: %d\n", problem1());
 	printf("Problem 2: %d\n", problem2());
@@ -28,6 +28,8 @@ int main() {
 	*/
 	printf("Problem 16: %d\n", problem16());
 	printf("Problem 17: %d\n", problem17());
+	printf("Problem 18: %d\n", problem18());
+	printf("Problem 67: %d\n", problem67());
 	getchar();
 	return 0;
 }
