@@ -14,14 +14,17 @@ private:
 	string number;
 
 public:
-	// constructors
+	/* constructors */
 	ubigint() {
 		number = "";
 	}
 
-	// for now, just stick w strings.
 	ubigint(string s) {
 		number = s;
+	}
+
+	ubigint(int s) {
+		number = to_string(s);
 	}
 	
 	// operators
@@ -68,6 +71,61 @@ public:
 
 	friend void operator<<(ostream& stream, const ubigint& i) {
 		stream << i.number;
+	}
+
+	/* unsigned int comparisons, assumes no leading zeroes */
+	friend bool operator < (const ubigint& left, const ubigint& right) {
+		/* vacuous truth */
+		if (left.number.size() == 0 && right.number.size() == 0) {
+			return true;
+		}
+		else if (left.number.size() > right.number.size()) {
+			return false;
+		}
+		else if (left.number.size() < right.number.size()) {
+			return true;
+		}
+		for (size_t idx = 0; idx < left.number.size(); ++idx) {
+			if (left.number[idx] < right.number[idx])
+				return true;
+			else if (left.number[idx] > right.number[idx])
+				return false;
+		}
+
+		return false;
+
+	}
+
+	friend bool operator > (const ubigint& left, const ubigint& right) {
+		/* vacuous truth */
+		if (left.number.size() == 0 && right.number.size() == 0) {
+			return true;
+		}
+		else if (left.number.size() > right.number.size()) {
+			return true;
+		}
+		else if (left.number.size() < right.number.size()) {
+			return false;
+		}
+		for (size_t idx = 0; idx < left.number.size(); ++idx) {
+			if (left.number[idx] < right.number[idx])
+				return false;
+			else if (left.number[idx] > right.number[idx])
+				return true;
+		}
+
+		return false;
+
+	}
+
+	ubigint factorial(void) {
+		ubigint accumulator ("1");
+		int num = stoi(this->number);
+		while (num > 0) {
+			accumulator = accumulator * ubigint(num);
+			--num;
+		}
+		return accumulator;
 	}
 
 	unsigned int sumDigits(void) {

@@ -29,6 +29,7 @@ int main() {
 	printf("Problem 16: %d\n", problem16());
 	printf("Problem 17: %d\n", problem17());
 	printf("Problem 18: %d\n", problem18());
+	printf("Problem 20: %d\n", problem20());
 	printf("Problem 67: %d\n", problem67());
 	getchar();
 	return 0;

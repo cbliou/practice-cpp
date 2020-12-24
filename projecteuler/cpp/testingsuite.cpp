@@ -33,6 +33,27 @@ void testubigint() {
 	assert(ubigint("99999999999999999999999999999999999999999999999999999999999999999999999999999999999") * ubigint("1") * ubigint("1") * ubigint("1") == ubigint("99999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
 	assert(ubigint("783265096274793940943") * ubigint("3725096592838348945892377642") == ubigint("2917738141422436272725283756412559956189601596406"));
 
+
+	/* < test */
+	assert(ubigint("12") < ubigint("13") == true);
+	assert(ubigint("13") < ubigint("13") == false);
+	assert(ubigint("1") < ubigint("13") == true);
+	assert(ubigint("133") < ubigint("13") == true);
+	assert(ubigint("23342") < ubigint("13") == false);
+	assert(ubigint("232332") < ubigint("0") == false);
+	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892390") == true);
+	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892389") == false);
+
+	/* > test */
+	assert(ubigint("12") < ubigint("13") == false);
+	assert(ubigint("13") < ubigint("13") == true);
+	assert(ubigint("1") < ubigint("13") == false);
+	assert(ubigint("133") < ubigint("13") == false);
+	assert(ubigint("23342") < ubigint("13") == true);
+	assert(ubigint("232332") < ubigint("0") == true);
+	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892390") == false);
+	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892389") == true);
+
 	cout << "Passed all bigint tests.\n";
 }
 
