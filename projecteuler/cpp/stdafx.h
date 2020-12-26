@@ -5,6 +5,7 @@
 #include <string>
 #include <regex>
 #include <unordered_map>
+#include <unordered_set>
 
 #include "ubigint.h"
 #include "util.h"

@@ -75,3 +75,19 @@ int getNumDivisors(uint64_t i) {
 	}
 	return (double)sqrt(i) == (int)sqrt(i) ? n * 2 + 1 : n * 2;
 }
+
+uint64_t sumProperDivisors(uint64_t i) {
+	if (i == 1) {
+		return 0;
+	}
+	
+	uint64_t sum = 0;
+	for (uint64_t j = 1; j <= i / 2; ++j) {
+		if (i % j == 0) {
+			sum += j;
+		}
+	}
+
+	return sum;
+
+}

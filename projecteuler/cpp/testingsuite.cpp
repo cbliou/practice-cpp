@@ -38,26 +38,27 @@ void testubigint() {
 	assert(ubigint("12") < ubigint("13") == true);
 	assert(ubigint("13") < ubigint("13") == false);
 	assert(ubigint("1") < ubigint("13") == true);
-	assert(ubigint("133") < ubigint("13") == true);
+	assert(ubigint("133") < ubigint("13") == false);
 	assert(ubigint("23342") < ubigint("13") == false);
 	assert(ubigint("232332") < ubigint("0") == false);
-	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892390") == true);
-	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892389") == false);
+	assert(ubigint("168754382974582389472983892389") < ubigint("168754382974582389472983892390") == true);
+	assert(ubigint("168754382974582389472983892389") < ubigint("168754382974582389472983892389") == false);
 
 	/* > test */
-	assert(ubigint("12") < ubigint("13") == false);
-	assert(ubigint("13") < ubigint("13") == true);
-	assert(ubigint("1") < ubigint("13") == false);
-	assert(ubigint("133") < ubigint("13") == false);
-	assert(ubigint("23342") < ubigint("13") == true);
-	assert(ubigint("232332") < ubigint("0") == true);
-	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892390") == false);
-	assert(ubigint("168754382974i582389472983892389") < ubigint("168754382974i582389472983892389") == true);
+	assert(ubigint("12") > ubigint("13") == false);
+	assert(ubigint("13") > ubigint("13") == false);
+	assert(ubigint("1") > ubigint("13") == false);
+	assert(ubigint("133") > ubigint("13") == true);
+	assert(ubigint("23342") > ubigint("13") == true);
+	assert(ubigint("232332") > ubigint("0") == true);
+	assert(ubigint("168754382974582389472983892389") > ubigint("168754382974582389472983892390") == false);
+	assert(ubigint("168754382974582389472983892389") > ubigint("168754382974582389472983892389") == false);
 
 	cout << "Passed all bigint tests.\n";
 }
 
 void testUtil() {
+
 	assert(determinePalindrome(121) == true);
 	assert(determinePalindrome(11) == true);
 	assert(determinePalindrome(1) == true);
@@ -106,6 +107,27 @@ void testUtil() {
 	assert(getNumDivisors(21) == 4);
 	assert(getNumDivisors(28) == 6);
 	assert(getNumDivisors(60) == 12);
+
+	assert(sumProperDivisors(1) == 0);
+	assert(sumProperDivisors(2) == 1);
+	assert(sumProperDivisors(3) == 1);
+	assert(sumProperDivisors(4) == 3);
+	assert(sumProperDivisors(5) == 1);
+	assert(sumProperDivisors(6) == 6);
+	assert(sumProperDivisors(7) == 1);
+	assert(sumProperDivisors(8) == 7);
+	assert(sumProperDivisors(9) == 4);
+	assert(sumProperDivisors(10) == 8);
+	assert(sumProperDivisors(11) == 1);
+	assert(sumProperDivisors(12) == 16);
+	assert(sumProperDivisors(13) == 1);
+	assert(sumProperDivisors(14) == 10);
+	assert(sumProperDivisors(15) == 9);
+	assert(sumProperDivisors(21) == 11);
+	assert(sumProperDivisors(28) == 28);
+	assert(sumProperDivisors(60) == 108);
+	assert(sumProperDivisors(220) == 284);
+	assert(sumProperDivisors(284) == 220);
 
 	cout << "Passed all util tests.\n";
 }

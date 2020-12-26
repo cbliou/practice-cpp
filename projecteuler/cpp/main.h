@@ -22,6 +22,6 @@ int problem17();
 int problem18();
 int problem19();
 int problem20();
-int problem21();
+uint64_t problem21();
 int problem22();
 int problem67();

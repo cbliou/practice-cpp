@@ -15,5 +15,8 @@ void reshapeGrid(vector<int>& init, vector<vector<int>>& v, int dim);
 */
 uint64_t triangleNumber(int nth);
 
-/* return number of divisors, inclusive of 1, for int i*/
+/* return number of divisors, inclusive of 1, for int i */
 int getNumDivisors(uint64_t i);
+
+/* sum all proper divisors of i */
+uint64_t sumProperDivisors(uint64_t i);

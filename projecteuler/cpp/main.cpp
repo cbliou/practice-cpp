@@ -25,12 +25,15 @@ int main() {
 	cout << "\n";
 	printf("Problem 14: %d\n", problem14());
 	printf("Problem 15: %lld\n", problem15());
-	*/
+	
 	printf("Problem 16: %d\n", problem16());
 	printf("Problem 17: %d\n", problem17());
 	printf("Problem 18: %d\n", problem18());
 	printf("Problem 20: %d\n", problem20());
+	*/
+	printf("Problem 21: %lld\n", problem21());
 	printf("Problem 67: %d\n", problem67());
+	
 	getchar();
 	return 0;
 }
